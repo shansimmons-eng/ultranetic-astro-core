@@ -1,18 +1,1 @@
-{
-  "name": "ultranetic-astro-core",
-  "type": "module",
-  "version": "0.0.1",
-  "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
-  },
-  "dependencies": {
-    "@astrojs/cloudflare": "latest",
-    "@astrojs/mdx": "latest",
-    "@astrojs/sitemap": "latest",
-    "astro": "latest"
-  }
-}
+{"name":"ultranetic-astro-core","type":"module","version":"0.0.1","scripts":{"build":"astro build","dev":"astro dev","start":"astro dev","preview":"astro preview","astro":"astro"},"dependencies":{"@astrojs/cloudflare":"latest","@astrojs/mdx":"latest","@astrojs/sitemap":"latest","astro":"latest"}}
