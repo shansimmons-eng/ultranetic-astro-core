@@ -1,18 +1,35 @@
 ---
-// Fetch all .md files from the pages directory
+// This code runs at build time on Cloudflare
 const posts = await Astro.glob('./*.md');
+const siteTitle = "Ultranetic";
 ---
 
-<html>
-  <head><title>Ultranetic</title></head>
-  <body>
-    <h1>My Content</h1>
-    <ul>
-      {posts.map(post => (
-        <li>
-          <a href={post.url}>{post.frontmatter.title || post.url}</a>
-        </li>
-      ))}
-    </ul>
-  </body>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<title>{siteTitle}</title>
+		<style>
+			body { font-family: sans-serif; max-width: 800px; margin: 40px auto; padding: 0 20px; line-height: 1.6; color: #333; }
+			h1 { border-bottom: 2px solid #eee; padding-bottom: 10px; }
+			ul { list-style: none; padding: 0; }
+			li { margin: 10px 0; font-size: 1.2rem; }
+			a { color: #0070f3; text-decoration: none; }
+			a:hover { text-decoration: underline; }
+		</style>
+	</head>
+	<body>
+		<h1>{siteTitle}</h1>
+		<p>Welcome to the new home of Ultranetic. Here are the latest updates:</p>
+		<ul>
+			{posts.map(post => (
+				<li>
+					<a href={post.url}>
+						{post.frontmatter.title || post.url.split('/').pop()}
+					</a>
+				</li>
+			))}
+		</ul>
+	</body>
 </html>
