@@ -1,13 +1,15 @@
 import { defineConfig } from 'astro/config';
+import cloudflare from '@astrojs/cloudflare';
 import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
-import cloudflare from '@astrojs/cloudflare';
 
 export default defineConfig({
   site: 'https://ultranetic.org',
-  output: 'static', 
+  output: 'server', // Use 'server' for Cloudflare SSR/Hybrid
   adapter: cloudflare({
-    mode: 'directory'
+    platformProxy: {
+      enabled: true,
+    },
   }),
   integrations: [mdx(), sitemap()],
 });
