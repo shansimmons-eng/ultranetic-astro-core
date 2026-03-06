@@ -1,4 +1,8 @@
 ---
+export const prerender = true; // Add this line
+import { type CollectionEntry, getCollection } from 'astro:content';
+// ... rest of your code
+---
 import { type CollectionEntry, getCollection, render } from 'astro:content';
 import BlogPost from '../../layouts/BlogPost.astro';
 
