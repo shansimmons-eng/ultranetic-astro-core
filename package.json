@@ -3,13 +3,13 @@
   "type": "module",
   "version": "0.0.1",
 "scripts": {
-    "build": "astro build",
-    "deploy": "true",
-    "dev": "astro dev",
-    "start": "astro dev",
-    "preview": "astro preview",
-    "astro": "astro"
-  },
+  "build": "astro build",
+  "deploy": "wrangler pages deploy ./dist",
+  "dev": "astro dev",
+  "start": "astro dev",
+  "preview": "astro preview",
+  "astro": "astro"
+},
   "dependencies": {
     "@astrojs/cloudflare": "latest",
     "@astrojs/mdx": "latest",
