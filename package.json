@@ -2,8 +2,9 @@
   "name": "ultranetic-astro-core",
   "type": "module",
   "version": "0.0.1",
-  "scripts": {
+"scripts": {
     "build": "astro build",
+    "deploy": "true",
     "dev": "astro dev",
     "start": "astro dev",
     "preview": "astro preview",
