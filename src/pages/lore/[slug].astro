@@ -5,6 +5,7 @@ import TechCard from '../../components/TechCard.astro';
 
 export const prerender = true;
 
+// Define the available routes based on the markdown files
 export async function getStaticPaths() {
 	const loreEntries = await getCollection('lore');
 	return loreEntries.map((entry) => ({
@@ -19,14 +20,48 @@ const { Content } = await render(entry);
 
 <Layout>
 	<main class="relative z-10 px-6 py-20 max-w-4xl mx-auto">
-		<a href="/lore" class="text-ultranetic-blue font-mono text-sm hover:text-white transition-colors mb-8 inline-block">
-			← RETURN TO INDEX
-		</a>
+		<nav class="mb-8">
+			<a href="/lore" class="inline-block px-4 py-2 border border-ultranetic-blue/40 bg-ultranetic-blue/10 text-ultranetic-blue font-mono text-xs hover:bg-ultranetic-blue/20 transition-colors">
+				← RETURN TO LEDGER
+			</a>
+		</nav>
 		
-		<TechCard class="mt-8">
-			<div class="prose prose-invert prose-cyan max-w-none prose-headings:font-display prose-headings:uppercase prose-h1:text-4xl prose-h2:text-2xl prose-h2:border-l-2 prose-h2:border-ultranetic-blue prose-h2:pl-4 prose-p:text-white/70">
+		<TechCard class="p-8 md:p-14">
+			<article class="cu-markdown">
 				<Content />
-			</div>
+			</article>
 		</TechCard>
 	</main>
 </Layout>
+
+<style is:global>
+	/* Scoped Typography for Markdown Content */
+	.cu-markdown h1 {
+		@apply text-4xl md:text-6xl font-display font-bold uppercase tracking-tighter mb-10 bg-clip-text text-transparent bg-gradient-to-br from-white to-white/40;
+	}
+	.cu-markdown h2 {
+		@apply text-2xl md:text-3xl font-display font-bold uppercase tracking-widest mb-6 mt-16 border-l-2 border-ultranetic-blue pl-6;
+	}
+	.cu-markdown h3 {
+		@apply text-xl font-mono text-ultranetic-blue tracking-[0.2em] mb-4 mt-10;
+	}
+	.cu-markdown p {
+		@apply text-lg text-white/70 leading-relaxed mb-6;
+	}
+	.cu-markdown ul {
+		@apply list-none mb-8 space-y-4;
+	}
+	.cu-markdown li {
+		@apply text-white/70 relative pl-6;
+	}
+	.cu-markdown li::before {
+		content: "›";
+		@apply absolute left-0 text-ultranetic-blue font-mono text-xl leading-none top-[-2px];
+	}
+	.cu-markdown strong {
+		@apply text-white font-semibold;
+	}
+	.cu-markdown blockquote {
+		@apply border-l-4 border-ultranetic-blue/50 bg-white/5 p-6 my-8 text-white/80 font-mono text-sm;
+	}
+</style>
