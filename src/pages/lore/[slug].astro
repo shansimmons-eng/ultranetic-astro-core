@@ -1,0 +1,32 @@
+---
+import { getCollection, render } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import TechCard from '../../components/TechCard.astro';
+
+export const prerender = true;
+
+export async function getStaticPaths() {
+	const loreEntries = await getCollection('lore');
+	return loreEntries.map((entry) => ({
+		params: { slug: entry.id },
+		props: entry,
+	}));
+}
+
+const entry = Astro.props;
+const { Content } = await render(entry);
+---
+
+<Layout>
+	<main class="relative z-10 px-6 py-20 max-w-4xl mx-auto">
+		<a href="/lore" class="text-ultranetic-blue font-mono text-sm hover:text-white transition-colors mb-8 inline-block">
+			← RETURN TO INDEX
+		</a>
+		
+		<TechCard class="mt-8">
+			<div class="prose prose-invert prose-cyan max-w-none prose-headings:font-display prose-headings:uppercase prose-h1:text-4xl prose-h2:text-2xl prose-h2:border-l-2 prose-h2:border-ultranetic-blue prose-h2:pl-4 prose-p:text-white/70">
+				<Content />
+			</div>
+		</TechCard>
+	</main>
+</Layout>
