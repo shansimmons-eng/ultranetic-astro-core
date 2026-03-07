@@ -1,5 +1,7 @@
 {
-  "name": "ultranetic-astro-core",
-  "compatibility_date": "2026-03-06",
-  "pages_build_output_dir": "./dist"
+  "main": "./dist/_worker.js",
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS"
+  }
 }
