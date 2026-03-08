@@ -9,6 +9,7 @@ export default {
 			},
 			colors: {
 				'ultranetic-blue': '#4169E1', // Adjust this hex code to your preferred blue
+				'ultranetic-dark': '#111111', // Adjust this hex code to your preferred dark color
 			},
 		},
 	},
