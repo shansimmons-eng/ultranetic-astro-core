@@ -1,33 +1,6 @@
-# Astro Starter Kit: Blog
+# Ultranetic
 
-```sh
-npm create astro@latest -- --template blog
-```
-
-<!-- ASTRO:REMOVE:START -->
-
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/blog)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/blog)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/blog/devcontainer.json)
-
-<!-- ASTRO:REMOVE:END -->
-
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-<!-- ASTRO:REMOVE:START -->
-
-![blog](https://github.com/withastro/astro/assets/2244813/ff10799f-a816-4703-b967-c78997e8323d)
-
-<!-- ASTRO:REMOVE:END -->
-
-Features:
-
-- ✅ Minimal styling (make it your own!)
-- ✅ 100/100 Lighthouse performance
-- ✅ SEO-friendly with canonical URLs and OpenGraph data
-- ✅ Sitemap support
-- ✅ RSS Feed support
-- ✅ Markdown & MDX support
+This repository contains the source code for the [Ultranetic.org](https://ultranetic.org) website, built with [Astro](https://astro.build).
 
 ## 🚀 Project Structure
 
@@ -35,12 +8,19 @@ Inside of your Astro project, you'll see the following folders and files:
 
 ```text
 ├── public/
+│   └── ultranetic-homo-ultrans.png
 ├── src/
 │   ├── components/
 │   ├── content/
+│   │   ├── blog/
+│   │   ├── lore/
+│   │   └── config.ts
 │   ├── layouts/
 │   └── pages/
+│   └── styles/
+│       └── global.css
 ├── astro.config.mjs
+├── tailwind.config.mjs
 ├── README.md
 ├── package.json
 └── tsconfig.json
