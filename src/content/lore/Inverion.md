@@ -1,3 +1,7 @@
+---
+title: 'Inverion Divide'
+description: 'Inspanse Reversion Protocol | CU-REVISION-LOG'
+---
 # Inverion Divide
 **Inspanse Reversion Protocol** | CU-REVISION-LOG
 

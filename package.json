@@ -2,19 +2,21 @@
   "name": "ultranetic-astro-core",
   "type": "module",
   "version": "0.0.1",
-"scripts": {
-  "build": "astro build",
-  "deploy": "wrangler pages deploy ./dist",
-  "dev": "astro dev",
-  "start": "astro dev",
-  "preview": "astro preview",
-  "astro": "astro"
-},
+  "scripts": {
+    "build": "astro build",
+    "deploy": "wrangler pages deploy ./dist",
+    "dev": "astro dev",
+    "start": "astro dev",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
   "dependencies": {
-    "@astrojs/cloudflare": "latest",
+    "@astrojs/cloudflare": "^12.6.5",
     "@astrojs/mdx": "latest",
     "@astrojs/rss": "latest",
     "@astrojs/sitemap": "latest",
-    "astro": "latest"
+    "@astrojs/tailwind": "^6.0.2",
+    "astro": "latest",
+    "tailwindcss": "^3.4.19"
   }
 }
