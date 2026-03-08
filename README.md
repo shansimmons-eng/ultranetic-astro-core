@@ -14,12 +14,12 @@ Inside of your Astro project, you'll see the following folders and files:
 │   ├── content/
 │   │   ├── blog/
 │   │   ├── lore/
-│   │   └── config.ts
 │   ├── layouts/
 │   └── pages/
 │   └── styles/
 │       └── global.css
 ├── astro.config.mjs
+├── src/content.config.ts
 ├── tailwind.config.mjs
 ├── README.md
 ├── package.json
