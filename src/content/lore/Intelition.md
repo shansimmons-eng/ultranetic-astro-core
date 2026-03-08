@@ -1,3 +1,7 @@
+---
+title: 'Intelition'
+description: 'The Ambient Compute Paradigm and Cognitive Sovereignty | CU-INTELITION'
+---
 # Intelition
 **The Ambient Compute Paradigm and Cognitive Sovereignty** | CU-INTELITION
 

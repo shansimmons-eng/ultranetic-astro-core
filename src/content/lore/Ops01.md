@@ -1,3 +1,7 @@
+---
+title: 'Praxis Incursion'
+description: 'Counter-Hierarchical Stabilization | CU-OPS-01'
+---
 # Praxis Incursion
 **Counter-Hierarchical Stabilization** | CU-OPS-01
 

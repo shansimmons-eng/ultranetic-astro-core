@@ -1,3 +1,7 @@
+---
+title: 'Stewardship'
+description: 'Mesh-Consensus Protocol | CU-CH-05'
+---
 # Stewardship
 **Mesh-Consensus Protocol** | CU-CH-05
 
