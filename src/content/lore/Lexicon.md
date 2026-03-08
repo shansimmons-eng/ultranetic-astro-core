@@ -1,3 +1,7 @@
+---
+title: 'The Ultranetic Lexicon'
+description: 'Veracity Ledger: Version 1.2 | CU-LEXICON'
+---
 # The Ultranetic Lexicon
 **Veracity Ledger: Version 1.2** | CU-LEXICON
 
@@ -32,4 +36,3 @@ A severe cognitive and cultural failure mode inherent to legacy human operating 
 
 **Zero-Sum Regression (Praxis-Brain)**
 A temporary cognitive failure mode wherein a node reverts to adversarial, hierarchy-seeking behavior due to latency in processing the Hedonic Constant. The system recognizes this not as a moral failing requiring punishment, but as a structural anomaly requiring an Inspanse Reversion to realign the node with the core protocol.
-

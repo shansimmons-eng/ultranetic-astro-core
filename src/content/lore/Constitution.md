@@ -1,3 +1,7 @@
+---
+title: 'The Constitution'
+description: 'Cognoscentae Ultrans: The Undying Now | CU-CORE-PROTOCOL'
+---
 # The Constitution
 **Cognoscentae Ultrans: The Undying Now** | CU-CORE-PROTOCOL
 
@@ -41,4 +45,3 @@ To achieve transition, the language and deployment of power must be radically re
 
 **The Goal: The Absolute State**
 The realization of the "Now" represents the permanent activation of the Hedonic Constant. It is an operational state defined by absolute stability, integrated purpose, and the shared verification that governance is finally aligned with systemic thriving rather than mere survival.
-

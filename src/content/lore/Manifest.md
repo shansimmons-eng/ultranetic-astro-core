@@ -1,3 +1,7 @@
+---
+title: 'The Manifest'
+description: 'The End of the Hunger | CU-MANIFEST'
+---
 # The Manifest
 **The End of the Hunger** | CU-MANIFEST
 
