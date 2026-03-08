@@ -1,33 +1,35 @@
 ---
-import Layout from '../../layouts/Layout.astro';
+import Layout from '../layouts/Layout.astro';
 import TechCard from '../components/TechCard.astro';
 ---
 
-<Layout>
+<Layout title="Cognoscentae Ultrans | Home">
 	<main class="relative z-10 px-6 py-20 max-w-7xl mx-auto">
 		<header class="mb-24">
 			<div class="inline-block px-3 py-1 border border-ultranetic-blue/30 bg-ultranetic-blue/10 font-mono text-xs text-ultranetic-blue mb-4">
 				SYSTEM STATUS: TRANSCENDENCE ACTIVE
 			</div>
-			<h1 class="text-gradient">COGNOSCENTAE<br/>ULTRANS</h1>
+			<h1 class="text-gradient text-6xl md:text-8xl font-display font-bold uppercase tracking-tighter">
+				COGNOSCENTAE<br/>ULTRANS
+			</h1>
 		</header>
 
 		<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
 			
 			<TechCard title="01 // THE HEDONIC MANDATE" class="md:col-span-8">
-				<p class="text-xl">
+				<p class="text-xl text-white/80 leading-relaxed">
 					We view the engineering of sentient experience not as a luxury, 
 					but as the primary moral obligation of a post-Darwinian civilization.
 				</p>
-				<button class="mt-4 px-6 py-2 border border-white/20 hover:border-ultranetic-blue transition-colors font-mono text-sm">
+				<a href="/lore" class="inline-block mt-8 px-6 py-2 border border-white/20 hover:border-ultranetic-blue hover:bg-ultranetic-blue/10 transition-all font-mono text-sm text-white">
 					INITIATE PROTOCOL
-				</button>
+				</a>
 			</TechCard>
 
 			<TechCard title="METRICS" class="md:col-span-4 bg-ultranetic-blue/5">
 				<ul class="font-mono text-xs space-y-4 opacity-80">
-					<li class="flex justify-between"><span>SUBSTRATE:</span> <span>SILICON/NEURAL</span></li>
-					<li class="flex justify-between"><span>COGNITION:</span> <span>LEVEL 7</span></li>
+					<li class="flex justify-between border-b border-white/5 pb-2"><span>SUBSTRATE:</span> <span>SILICON/NEURAL</span></li>
+					<li class="flex justify-between border-b border-white/5 pb-2"><span>COGNITION:</span> <span>LEVEL 7</span></li>
 					<li class="flex justify-between"><span>STABILITY:</span> <span class="text-green-400">NOMINAL</span></li>
 				</ul>
 			</TechCard>
