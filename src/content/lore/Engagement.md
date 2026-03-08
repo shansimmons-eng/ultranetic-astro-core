@@ -1,3 +1,7 @@
+---
+title: 'Engagement'
+description: 'The Cognitive Retrofit | CU-RETROFIT'
+---
 # Engagement
 **The Cognitive Retrofit** | CU-RETROFIT
 

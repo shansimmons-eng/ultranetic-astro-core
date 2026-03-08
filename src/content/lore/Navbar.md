@@ -1,3 +1,7 @@
+---
+title: 'Navbar'
+description: 'Site Navigation'
+---
 # Site Navigation
 **Global Menu Structure**
 

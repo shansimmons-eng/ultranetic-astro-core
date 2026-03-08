@@ -1,3 +1,7 @@
+---
+title: 'Footer'
+description: 'Site Footer'
+---
 # Join the Architects of Tomorrow.
 *Explore the future of sentience.*
 

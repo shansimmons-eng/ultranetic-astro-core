@@ -1,3 +1,7 @@
+---
+title: 'The Cognitive Bill of Rights'
+description: 'Sovereign Agency Protections | CU-SOVEREIGN-AGENCY'
+---
 # The Cognitive Bill of Rights
 **Sovereign Agency Protections** | CU-SOVEREIGN-AGENCY
 

@@ -1,3 +1,7 @@
+---
+title: 'Aesthetics'
+description: 'Co-occurring Magnetic Duality | CU-CH-06'
+---
 # Aesthetics
 **Co-occurring Magnetic Duality** | CU-CH-06
 

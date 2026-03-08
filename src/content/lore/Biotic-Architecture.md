@@ -1,3 +1,7 @@
+---
+title: 'Biotic Architecture'
+description: 'Organoid Intelligence and the Symbiotic Substrate | CU-BIOTIC'
+---
 # Biotic Architecture
 **Organoid Intelligence and the Symbiotic Substrate** | CU-BIOTIC
 

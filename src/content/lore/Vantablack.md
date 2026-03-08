@@ -1,3 +1,7 @@
+---
+title: 'Vantablack Sanctuary'
+description: 'The Sovereign Privacy Barrier | CU-PRIVACY-06'
+---
 # Vantablack Sanctuary
 **The Sovereign Privacy Barrier** | CU-PRIVACY-06
 
