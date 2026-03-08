@@ -1,17 +1,33 @@
 ---
 import '../styles/global.css';
+import navbar from '../components/navbar.astro';
 ---
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<title>Ultranetic | Post-Darwinian Architecture</title>
-	</head>
-	<body class="cyber-grid">
-		<div class="fixed inset-0 border-[20px] border-white/5 pointer-events-none z-40"></div>
-		<div class="fixed top-0 left-0 w-full h-1 bg-ultranetic-blue/20 z-50"></div>
-		
-		<slot />
-	</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+        <title>Ultranetic | Post-Darwinian Architecture</title>
+    </head>
+    <body class="bg-[#050505] text-white">
+        <div class="fixed inset-0 cyber-grid opacity-30 pointer-events-none transition-opacity duration-300"></div>
+
+        <navbar />
+
+        <main class="relative z-10">
+            <slot />
+        </main>
+
+        <script>
+            window.addEventListener('scroll', () => {
+                const grid = document.querySelector('.cyber-grid');
+                if (grid) {
+                    const scrollY = window.scrollY;
+                    // Fades from 0.3 to 0.05 over 600 pixels of scrolling
+                    const opacity = Math.max(0.05, 0.3 - (scrollY / 600)); 
+                    (grid as HTMLElement).style.opacity = opacity.toString();
+                }
+            });
+        </script>
+    </body>
 </html>

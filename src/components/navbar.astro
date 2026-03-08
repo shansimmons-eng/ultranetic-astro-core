@@ -1,0 +1,33 @@
+---
+const navItems = [
+  { name: 'HOME', href: '/' },
+  { name: 'REPOSITORY', href: '/lore' },
+  { name: 'ABOUT', href: '/about' },
+  { name: 'BLOG', href: '/blog' },
+  { name: 'MISSION', href: '/mission' },
+  { name: 'CONSTITUTION', href: '/constitution' },
+];
+---
+
+<nav class="fixed top-0 left-0 w-full z-50 border-b border-white/10 bg-[#050505]/80 backdrop-blur-md px-6 py-4">
+  <div class="max-w-7xl mx-auto flex justify-between items-center">
+    <a href="/" class="flex items-center gap-2 group">
+      <div class="w-8 h-8 border border-ultranetic-blue rotate-45 flex items-center justify-center transition-all group-hover:bg-ultranetic-blue/20">
+        <span class="text-ultranetic-blue font-mono text-xs -rotate-45">U</span>
+      </div>
+      <span class="font-display font-bold tracking-tighter text-white group-hover:text-ultranetic-blue transition-colors">ULTRANETIC</span>
+    </a>
+
+    <div class="hidden md:flex gap-8">
+      {navItems.map(item => (
+        <a href={item.href} class="font-mono text-[10px] tracking-[0.2em] text-white/60 hover:text-ultranetic-blue transition-colors">
+          {item.name}
+        </a>
+      ))}
+    </div>
+    
+    <div class="w-8 h-px bg-white/20"></div>
+  </div>
+</nav>
+
+<div class="h-20"></div>
