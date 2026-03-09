@@ -8,6 +8,7 @@ export default defineConfig({
   site: 'https://ultranetic.org',
   output: 'server', 
   adapter: cloudflare({
+    imageService: 'compile',
     platformProxy: {
       enabled: true,
     },

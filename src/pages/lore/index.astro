@@ -1,40 +1,46 @@
 ---
-import Layout from '../../layouts/layout.astro';
-import TechCard from '../../components/TechCard.astro';
+// Use the alias to avoid relative path errors
+import Layout from '@/layouts/layout.astro'; 
+import TechCard from '@/components/TechCard.astro';
 import { getCollection } from 'astro:content';
 
-// Fetch all verified lore documents
 const loreEntries = await getCollection('lore');
 ---
 
-<Layout>
-	<main class="relative z-10 px-6 py-20 max-w-7xl mx-auto">
-		<header class="mb-16 border-b border-white/10 pb-8">
-			<div class="inline-block px-3 py-1 border border-ultranetic-blue/30 bg-ultranetic-blue/10 font-mono text-xs text-ultranetic-blue mb-4">
-				DIRECTORY // 01
-			</div>
-			<h1 class="text-gradient text-5xl md:text-7xl font-display uppercase tracking-tighter mb-4">
-				The Veracity Ledger
-			</h1>
-			<p class="text-xl text-white/70 max-w-2xl font-mono">
-				Accessing foundational protocols, megatechture specifications, and constitutional architecture.
-			</p>
-		</header>
+<Layout title="The Veracity Ledger">
+    <main class="relative z-10 px-6 py-20 max-w-7xl mx-auto">
+        <header class="mb-16 border-b border-white/10 pb-8">
+            <div class="inline-block px-3 py-1 border border-[#00f2ff]/30 bg-[#00f2ff]/10 font-mono text-xs text-[#00f2ff] mb-4">
+                DIRECTORY // 01
+            </div>
+            <h1 class="text-gradient text-5xl md:text-7xl font-bold uppercase tracking-tighter mb-4">
+                The Veracity Ledger
+            </h1>
+            <p class="text-xl text-white/70 max-w-2xl font-mono">
+                Accessing foundational protocols, megatechture specifications, and constitutional architecture.
+            </p>
+        </header>
 
-		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-			{loreEntries.map(entry => (
-				<a href={`/lore/${entry.id}`} class="block group">
-					<TechCard class="h-full transition-all duration-300 group-hover:border-ultranetic-blue group-hover:bg-white/5 cursor-pointer">
-						<h2 class="text-2xl font-display uppercase mb-4 text-white group-hover:text-ultranetic-blue transition-colors border-none pl-0 mt-0">
-							{entry.id.replace('.md', '').replace(/-/g, ' ')}
-						</h2>
-						<div class="font-mono text-[10px] text-ultranetic-blue/70 flex justify-between border-t border-white/10 pt-4 mt-auto">
-							<span>STATUS: VERIFIED</span>
-							<span>READ PROTOCOL ↗</span>
-						</div>
-					</TechCard>
-				</a>
-			))}
-		</div>
-	</main>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {loreEntries.length > 0 ? (
+                loreEntries.map(entry => (
+                    <a href={`/lore/${entry.id}`} class="block group no-underline">
+                        <TechCard class="h-full transition-all duration-300 group-hover:border-[#00f2ff] group-hover:bg-white/5 cursor-pointer p-6 border border-white/10">
+                            <h2 class="text-2xl font-bold uppercase mb-4 text-white group-hover:text-[#00f2ff] transition-colors">
+                                {entry.data.title || entry.id.replace(/-/g, ' ')}
+                            </h2>
+                            <div class="font-mono text-[10px] text-[#00f2ff]/70 flex justify-between border-t border-white/10 pt-4 mt-auto">
+                                <span>STATUS: VERIFIED</span>
+                                <span>READ PROTOCOL ↗</span>
+                            </div>
+                        </TechCard>
+                    </a>
+                ))
+            ) : (
+                <div class="col-span-full py-20 text-center border border-dashed border-white/20">
+                    <p class="font-mono text-white/40">NO PROTOCOLS DETECTED IN /src/content/lore/</p>
+                </div>
+            )}
+        </div>
+    </main>
 </Layout>
