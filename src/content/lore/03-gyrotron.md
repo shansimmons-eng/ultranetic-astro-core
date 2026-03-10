@@ -1,7 +1,7 @@
 ---
 title: "Gyrotron"
 description: "Deep geothermal wellhead, massive brutalist industrial scale, glowing blue-white energy beam penetrating a deep borehole."
-image: "./images/ultranetic_asset_03.png"
+image: "/images/ultranetic_asset_03.png"
 date: 2026-03-08
 tags: ["energy", "industrial", "geothermal"]
 ---

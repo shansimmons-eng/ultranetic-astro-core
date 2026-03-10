@@ -1,7 +1,7 @@
 ---
 title: "Living Skin"
 description: "Brutalist concrete megastructure surface covered in pulsating layers of bioluminescent cyanobacteria and glowing blue nutrient veins."
-image: "./images/ultranetic_asset_02.png"
+image: "/images/ultranetic_asset_02.png"
 date: 2026-03-08
 tags: ["architecture", "biotech", "infrastructure"]
 ---

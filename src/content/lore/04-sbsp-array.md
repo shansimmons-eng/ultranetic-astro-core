@@ -1,7 +1,7 @@
 ---
 title: "SBSP Array"
 description: "Colossal space-based solar power array in orbit, fractal solar panel geometry, massive microwave transmitter beaming energy toward Earth."
-image: "./images/ultranetic_asset_04.png"
+image: "/images/ultranetic_asset_04.png"
 date: 2026-03-08
 tags: ["space", "energy", "orbital"]
 ---
