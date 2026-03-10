@@ -1,81 +1,78 @@
 ---
-// src/pages/lore/index.astro
+// src/pages/lore/index.astro - THE LUMINOUS EDITION
 import Layout from '../../layouts/layout.astro'; 
 import TechCard from '../../components/TechCard.astro';
 import { getCollection } from 'astro:content';
 
-// Fetching the collection - Astro 4 uses the slug/id from the filename
 const loreEntries = await getCollection('lore');
 ---
 
-<Layout title="The Veracity Ledger">
-    <main class="relative z-10 px-6 py-20 max-w-7xl mx-auto">
-        <header class="mb-16 border-b border-white/10 pb-8">
-            <div class="inline-block px-3 py-1 border border-[#00f2ff]/30 bg-[#00f2ff]/10 font-mono text-xs text-[#00f2ff] mb-4">
-                DIRECTORY // 01
+<Layout title="The Ultranetic Blueprint | A Future Without Pain">
+    <main class="relative z-10 px-6 py-24 max-w-6xl mx-auto bg-[#fffcf9]">
+        
+        <header class="mb-32 text-center max-w-3xl mx-auto">
+            <div class="inline-block px-6 py-2 mb-12 border-b-2 border-rose-200 text-rose-500 font-mono text-[11px] tracking-[0.5em] uppercase">
+                Project Ultranetic // The Transition
             </div>
-            <h1 class="text-5xl md:text-7xl font-bold uppercase tracking-tighter mb-4 text-white">
-                The <span class="text-[#00f2ff]">Veracity</span> Ledger
+            
+            <h1 class="text-6xl md:text-8xl font-serif font-light text-slate-900 tracking-tight mb-10 leading-none">
+                The Abolition of <span class="italic text-rose-500">Pain.</span>
             </h1>
-            <p class="text-xl text-white/70 max-w-2xl font-mono">
-                Accessing foundational protocols, megatechture specifications, and constitutional architecture.
-            </p>
+            
+            <div class="space-y-8 text-2xl text-slate-600 font-light leading-relaxed italic">
+                <p>
+                    "We are emerging from a death-cult era of engineered suffering. We have been zombies to a narrative of division for too long."
+                </p>
+                <p class="text-slate-900 font-normal not-italic">
+                    Ultranetic is the literal way forward—a technical and moral architecture built for <strong>love, kindness, and progress.</strong>
+                </p>
+            </div>
+
+            <div class="mt-16">
+                <div class="h-20 w-px bg-gradient-to-b from-rose-500 to-transparent mx-auto"></div>
+                <p class="mt-4 font-serif text-sm uppercase tracking-widest text-rose-400">Explore the Foundations</p>
+            </div>
         </header>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {loreEntries.length > 0 ? (
-                loreEntries.map(entry => (
-                    <a href={`/lore/${entry.slug || entry.id}`} class="block group no-underline">
-                        <TechCard class="h-full flex flex-col overflow-hidden border border-white/10 transition-all duration-500 group-hover:border-[#00f2ff] group-hover:bg-white/5 cursor-pointer p-0">
-                            
-                            {entry.data.image && (
-                                <div class="relative w-full h-56 overflow-hidden border-b border-white/10">
-                                    <img 
-                                        src={entry.data.image} 
-                                        alt={entry.data.title}
-                                        class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-in-out"
-                                    />
-                                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60"></div>
-                                </div>
-                            )}
-
-                            <div class="p-8 flex flex-col flex-grow">
-                                <h2 class="text-2xl font-bold uppercase tracking-tight text-white group-hover:text-[#00f2ff] transition-colors duration-300">
-                                    {entry.data.title || entry.id.replace(/-/g, ' ')}
-                                </h2>
-                                
-                                {entry.data.description && (
-                                    <p class="mt-4 text-sm text-white/50 line-clamp-2 font-mono">
-                                        {entry.data.description}
-                                    </p>
-                                )}
-                                
-                                <div class="font-mono text-[10px] text-[#00f2ff]/70 flex justify-between border-t border-white/5 pt-6 mt-auto">
-                                    <div class="flex items-center gap-2">
-                                        <span class="w-1.5 h-1.5 bg-[#00f2ff] rounded-full animate-pulse"></span>
-                                        <span>STATUS: {entry.data.status || 'VERIFIED'}</span>
-                                    </div>
-                                    <span class="opacity-40 group-hover:opacity-100 transition-opacity">DATA_FETCH ↗</span>
-                                </div>
+        <div id="blueprint" class="grid grid-cols-1 md:grid-cols-2 gap-12">
+            {loreEntries.map(entry => (
+                <a href={`/lore/${entry.slug || entry.id}`} class="block group no-underline">
+                    <div class="h-full flex flex-col bg-white border border-rose-100 shadow-sm hover:shadow-2xl hover:shadow-rose-100 transition-all duration-700 p-0 rounded-sm overflow-hidden">
+                        
+                        {entry.data.image && (
+                            <div class="relative w-full h-80 overflow-hidden">
+                                <img 
+                                    src={entry.data.image} 
+                                    alt={entry.data.title}
+                                    class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                                />
+                                <div class="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent opacity-40"></div>
                             </div>
-                        </TechCard>
-                    </a>
-                ))
-            ) : (
-                <div class="col-span-full py-32 text-center border border-dashed border-white/10 bg-white/5">
-                    <p class="font-mono text-[#00f2ff] animate-pulse">NO PROTOCOLS DETECTED IN /src/content/lore/</p>
-                    <p class="text-white/30 text-xs mt-2 italic">Awaiting archive injection...</p>
-                </div>
-            )}
+                        )}
+
+                        <div class="p-10 flex flex-col flex-grow">
+                            <h2 class="text-3xl font-serif font-light text-slate-800 group-hover:text-rose-500 transition-colors duration-500">
+                                {entry.data.title}
+                            </h2>
+                            
+                            {entry.data.description && (
+                                <p class="mt-6 text-slate-500 leading-relaxed font-light text-lg">
+                                    {entry.data.description}
+                                </p>
+                            )}
+                            
+                            <div class="mt-auto pt-10 flex items-center justify-between border-t border-rose-50 border-dashed">
+                                <div class="flex items-center gap-3">
+                                    <span class="w-2 h-2 bg-rose-400 rounded-full shadow-[0_0_8px_rgba(244,63,94,0.6)]"></span>
+                                    <span class="font-mono text-[10px] uppercase tracking-[0.2em] text-slate-400">
+                                        Pathway: {entry.slug || entry.id}
+                                    </div>
+                                <span class="text-rose-300 group-hover:translate-x-2 transition-transform duration-500 italic font-serif">Open →</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            ))}
         </div>
     </main>
 </Layout>
-
-<style>
-    /* Ensure the cards have a consistent height even with varying text lengths */
-    .text-gradient {
-        background: linear-gradient(to right, #fff, #00f2ff);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
-</style>
