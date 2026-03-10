@@ -1,9 +1,10 @@
 ---
-// Use the alias to avoid relative path errors
+// src/pages/lore/index.astro
 import Layout from '../../layouts/layout.astro'; 
 import TechCard from '../../components/TechCard.astro';
 import { getCollection } from 'astro:content';
 
+// Fetching the collection - Astro 4 uses the slug/id from the filename
 const loreEntries = await getCollection('lore');
 ---
 
@@ -13,34 +14,68 @@ const loreEntries = await getCollection('lore');
             <div class="inline-block px-3 py-1 border border-[#00f2ff]/30 bg-[#00f2ff]/10 font-mono text-xs text-[#00f2ff] mb-4">
                 DIRECTORY // 01
             </div>
-            <h1 class="text-gradient text-5xl md:text-7xl font-bold uppercase tracking-tighter mb-4">
-                The Veracity Ledger
+            <h1 class="text-5xl md:text-7xl font-bold uppercase tracking-tighter mb-4 text-white">
+                The <span class="text-[#00f2ff]">Veracity</span> Ledger
             </h1>
             <p class="text-xl text-white/70 max-w-2xl font-mono">
                 Accessing foundational protocols, megatechture specifications, and constitutional architecture.
             </p>
         </header>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {loreEntries.length > 0 ? (
                 loreEntries.map(entry => (
-                    <a href={`/lore/${entry.id}`} class="block group no-underline">
-                        <TechCard class="h-full transition-all duration-300 group-hover:border-[#00f2ff] group-hover:bg-white/5 cursor-pointer p-6 border border-white/10">
-                            <h2 class="text-2xl font-bold uppercase mb-4 text-white group-hover:text-[#00f2ff] transition-colors">
-                                {entry.data.title || entry.id.replace(/-/g, ' ')}
-                            </h2>
-                            <div class="font-mono text-[10px] text-[#00f2ff]/70 flex justify-between border-t border-white/10 pt-4 mt-auto">
-                                <span>STATUS: VERIFIED</span>
-                                <span>READ PROTOCOL ↗</span>
+                    <a href={`/lore/${entry.slug || entry.id}`} class="block group no-underline">
+                        <TechCard class="h-full flex flex-col overflow-hidden border border-white/10 transition-all duration-500 group-hover:border-[#00f2ff] group-hover:bg-white/5 cursor-pointer p-0">
+                            
+                            {entry.data.image && (
+                                <div class="relative w-full h-56 overflow-hidden border-b border-white/10">
+                                    <img 
+                                        src={entry.data.image} 
+                                        alt={entry.data.title}
+                                        class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-in-out"
+                                    />
+                                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60"></div>
+                                </div>
+                            )}
+
+                            <div class="p-8 flex flex-col flex-grow">
+                                <h2 class="text-2xl font-bold uppercase tracking-tight text-white group-hover:text-[#00f2ff] transition-colors duration-300">
+                                    {entry.data.title || entry.id.replace(/-/g, ' ')}
+                                </h2>
+                                
+                                {entry.data.description && (
+                                    <p class="mt-4 text-sm text-white/50 line-clamp-2 font-mono">
+                                        {entry.data.description}
+                                    </p>
+                                )}
+                                
+                                <div class="font-mono text-[10px] text-[#00f2ff]/70 flex justify-between border-t border-white/5 pt-6 mt-auto">
+                                    <div class="flex items-center gap-2">
+                                        <span class="w-1.5 h-1.5 bg-[#00f2ff] rounded-full animate-pulse"></span>
+                                        <span>STATUS: {entry.data.status || 'VERIFIED'}</span>
+                                    </div>
+                                    <span class="opacity-40 group-hover:opacity-100 transition-opacity">DATA_FETCH ↗</span>
+                                </div>
                             </div>
                         </TechCard>
                     </a>
                 ))
             ) : (
-                <div class="col-span-full py-20 text-center border border-dashed border-white/20">
-                    <p class="font-mono text-white/40">NO PROTOCOLS DETECTED IN /src/content/lore/</p>
+                <div class="col-span-full py-32 text-center border border-dashed border-white/10 bg-white/5">
+                    <p class="font-mono text-[#00f2ff] animate-pulse">NO PROTOCOLS DETECTED IN /src/content/lore/</p>
+                    <p class="text-white/30 text-xs mt-2 italic">Awaiting archive injection...</p>
                 </div>
             )}
         </div>
     </main>
 </Layout>
+
+<style>
+    /* Ensure the cards have a consistent height even with varying text lengths */
+    .text-gradient {
+        background: linear-gradient(to right, #fff, #00f2ff);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+</style>
