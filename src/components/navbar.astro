@@ -9,25 +9,17 @@ const navItems = [
 ];
 ---
 
-<nav class="fixed top-0 left-0 w-full z-50 border-b border-white/5 bg-[#050505]/60 backdrop-blur-xl transition-all duration-500 hover:bg-[#050505]/90 px-6 py-4">
-  <div class="max-w-7xl mx-auto flex justify-between items-center">
-    <a href="/" class="flex items-center gap-2 group">
-      <div class="w-8 h-8 border border-ultranetic-blue rotate-45 flex items-center justify-center transition-all group-hover:bg-ultranetic-blue/20">
-        <span class="text-ultranetic-blue font-mono text-xs -rotate-45">U</span>
-      </div>
-      <span class="font-display font-bold tracking-tighter text-white group-hover:text-ultranetic-blue transition-colors">ULTRANETIC</span>
+<nav class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
+    <a href="/" class="text-2xl font-bold tracking-tighter text-slate-900 hover:text-rose-500 transition-colors">
+        ULTRANETIC<span class="text-rose-500">.</span>
     </a>
-
-    <div class="hidden md:flex gap-8">
-      {navItems.map(item => (
-        <a href={item.href} class="font-mono text-[10px] tracking-[0.2em] text-white/60 hover:text-ultranetic-blue transition-colors">
-          {item.name}
-        </a>
-      ))}
-    </div>
     
-    <div class="w-8 h-px bg-white/20"></div>
-  </div>
+    <div class="hidden md:flex gap-10 items-center">
+        <a href="/lore" class="text-[11px] uppercase tracking-[0.2em] font-semibold text-slate-500 hover:text-rose-500">The Ledger</a>
+        <a href="/transition" class="text-[11px] uppercase tracking-[0.2em] font-semibold text-slate-500 hover:text-rose-500">The Transition</a>
+        <a href="/join" class="px-6 py-2 bg-slate-900 text-white text-[11px] uppercase tracking-widest font-bold rounded-full hover:bg-rose-500 transition-all shadow-lg shadow-rose-100">
+            Enter Sphere
+        </a>
+    </div>
 </nav>
-
 <div class="h-20"></div>
